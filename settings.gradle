@@ -1,0 +1,5 @@
+rootProject.name = 'srwjdb'
+
+include 'srwjdb-libs'
+//include 'srwjdb-server'
+
