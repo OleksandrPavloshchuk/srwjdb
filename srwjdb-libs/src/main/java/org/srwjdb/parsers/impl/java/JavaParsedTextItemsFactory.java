@@ -4,7 +4,6 @@ import org.srwjdb.items.ParsedTextItemsFactory;
 import org.srwjdb.parsers.NextParserStateEvent;
 import org.srwjdb.parsers.ParserState;
 
-
 /**
  * Parsed items factory for java
  */
@@ -66,8 +65,10 @@ public class JavaParsedTextItemsFactory extends ParsedTextItemsFactory {
             addMeta();
         } else if (isNumber()) {
             addNumber();
-        } else {
+        } else if (!isAccumulatorEmpty()) {
             addIdentifier();
+        } else {
+            addBlank();
         }
     }
 

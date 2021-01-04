@@ -34,8 +34,12 @@ public abstract class ParsedTextItemsFactory implements Consumer<NextParserState
         }
     }
     
+    protected boolean isAccumulatorEmpty() {
+        return accumulator.length()==0;
+    }
+    
     protected char getFirstChar() {
-        return accumulator.length()>0 ? accumulator.charAt(0) : 0;
+        return isAccumulatorEmpty() ? 0 : accumulator.charAt(0);
     }
 
     protected boolean isDelimiter(int c) {
